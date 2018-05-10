@@ -1,0 +1,264 @@
+div {
+	margin: 0;
+	padding: 0;
+}
+body{
+		 -moz-user-select: none; /*火狐*/
+	-webkit-user-select: none; /*webkit浏览器*/
+	-ms-user-select: none; /*IE10*/
+	user-select: none;
+}
+.game {
+	width: 200px;
+	height: 400px;
+	background-color: #9acfea;
+	border: 1px solid #0c7ba0;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+.next {
+	width: 100px;
+	height: 100px;
+	background-color: #9acfea;
+	border: 1px solid #0c7ba0;
+	position: absolute;
+	left: 215px;
+	top: 10px;
+}
+
+.info {
+	position: absolute;
+	width: calc(100% - 230px);
+	top: 100px;
+	right: 10px;
+	height: 165px;
+	text-align: center;
+	padding: 20px 0;
+}
+
+.info small {
+	font-size: 10px;
+}
+
+.info p {
+	margin: 0;
+	padding: 0;
+}
+
+.info .time-text,
+.score-text {
+	text-align: center;
+	border-bottom: 1px solid #714bc8;
+	font-size: 15px;
+	border-radius: 10px;
+	color: #723fb5;
+}
+
+.info .time {
+	color: red;
+	font-size: 20px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.info .score {
+	color: #00b3ee;
+	font-size: 20px;
+	vertical-align: middle;
+	overflow: hidden;
+	word-wrap: break-word;
+}
+
+.info .me,
+.rival {
+	width: 68px;
+	display: inline-block;
+	font-size: 10px;
+	position: relative;
+	margin: 15px 0;
+	vertical-align: top;
+}
+
+.info .me:before,
+.rival:before {
+	position: absolute;
+	display: inline-block;
+	background: #9C27B0;
+	color: #fff;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	font-size: 13px;
+	top: -10px;
+	right: 0;
+}
+
+.info .me:before {
+	content: '我';
+}
+
+.info .rival:before {
+	content: '对手';
+}
+
+.info .me>img,
+.rival>img {
+	width: 60px;
+}
+
+.button-box {
+	position: absolute;
+	bottom: 100px;
+	width: 100%;
+	text-align: center;
+	left: 0;
+}
+
+.button-box>div {
+	display: inline-block;
+	width: 75px;
+	line-height: 45px;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 5px;
+	margin: 0 5px;
+	cursor: pointer;
+	box-shadow: 0px 4px 4px 1px #1b1e2f;
+	transition: all .2s ease;
+}
+
+.button-box .left,
+.right {
+	background-color: #009688;
+}
+
+.button-box .rotate {
+	background-color: #2e7aa0;
+}
+
+.button-box .down {
+	background-color: #4CAF50;
+}
+
+
+/*方块样式*/
+
+.none,
+.current,
+.done {
+	width: 20px;
+	height: 20px;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	border-radius: 1px;
+	position: absolute;
+	box-sizing: border-box;
+}
+
+.none {
+	background-color: #9acfea;
+}
+
+.current {
+	background-color: #c849de;
+	border: 1px solid #9f09b9;
+}
+
+.done {
+	background-color: #E91E63;
+	border: 1px solid #8b0d38;
+}
+.over{
+	    background-color: rgba(32, 31, 31, 0.2);
+    position: absolute;
+    width: 100%;
+    z-index: 99999;
+    left: 0;
+    top: 0;
+    display: none;
+}
+.over .over-text-box{
+	width: 230px;
+    background-color: rgba(255, 255, 255,0.9);
+    height: 130px;
+    margin: 0 auto;
+    border-radius: 20px;
+    line-height: 130px;
+    text-align: center;
+    position: relative;
+    font-size: 35px;
+    font-weight: 900;
+    font-family: sans-serif;
+    top: 27%;
+    margin-top: -55px;
+    box-shadow: 2px 3px 13px 0px #524a4a;
+}
+.over-text{
+	    background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#e11345), to(rgb(155, 51, 221)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.start ,.cancel{
+	    width: 220px;
+    height: 45px;
+    display: inline-block;
+    background-color: rgba(255, 255, 255,0.9);
+    line-height: 45px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 10px;
+    color: #bd51b0;
+    font-weight: 600;
+    position: absolute;
+        bottom: 45%;
+    cursor: pointer;
+}
+.start{
+	    left: 50%;
+    margin-left: -110px;
+}
+.cancel{
+	right: 20%;
+}
+@media screen and (min-width:320px) {
+	.button-box {
+		bottom: 75px;
+	}
+}
+
+@media screen and (max-width:321px) {
+	.button-box>div {
+		width: 60px;
+	}
+}
+
+@media screen and (min-width:375px) {
+	.next {
+		left: 240px;
+	}
+	.button-box {
+		bottom: 100px;
+	}
+}
+
+@media screen and (min-width:414px) {
+	.next {
+		left: 265px;
+	}
+	.game {
+		left: 25px;
+	}
+	.button-box {
+		bottom: 170px;
+	}
+}
+
+@media screen and (max-height:548px) {
+	.button-box {
+		bottom: 50px;
+	}
+}
